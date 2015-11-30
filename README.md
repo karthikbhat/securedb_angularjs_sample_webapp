@@ -1,18 +1,20 @@
 # securedb_angularjs_sample_webapp
 
-This sample AngularJS webapp shows you how to integrate with [**SecureDB RESTful Encrypted Identity Management APIs**](https://securedb.co) using angularjs. The intention is to show how simple it is for anyone to come up with a fully integrated webapp providing enterprise class safe,secure, encrypted identity management within a matter of few hours using SecureDB APIs.
+This sample AngularJS webapp shows you how to integrate with [**SecureDB RESTful Encrypted Identity Management APIs**](https://securedb.co) using AngularJS. The intention is to show how simple it is for anyone to come up with a fully integrated webapp providing enterprise class safe,secure, encrypted identity management within a matter of few hours using SecureDB APIs.
 
 This web app can be deployed using Apache httpd or even deployed using Eclipse IDE.
 
 # Following are the pre-requisites
 
 ## Getting your SecureDB user credentials
-You need to register as a customer with SecureDB either via the cloud-service or via the on-premise offering to obtain your **Customer ID** and **Directory ID**. You can authenticate to SecureDB APIs in one of the two ways:
+SecureDB Encrypted IdM is available as a cloud service (aka SecureDB Cloud) or as an on-premise (aka SecureDB Enterprise) service. You can can create a FREE account on our SecureDB Cloud service (See [Quick Start Guide](https://securedb.co/docs/#quick-start) to get started). Once you register as a customer with SecureDB (either via the cloud-service or via the on-premise offering), you will get your **Customer ID** and **Directory ID**. 
 
-* Basic Authentication
+You can authenticate to SecureDB APIs in one of the two ways:
+
+* Basic Authentication (BA)
 * JSON Web Token (JWT)
 
-Some of the APIs are also available without any authentication. Since AngularJS runs within a browser, Basic Authentication (BA) should not be used to authenticate to the APIs. This is to avoid storing the BA header values at the browser. Hence, all the APIs used in this sample use JWT to authenticate to SecureDB Encrypted IdM APIs. The idea is to call "/authenticate" API first, and then use the JWT returned to make further API calls. Based on the authenticated user being a regular or a SecureDB Admin user, different APIs will work. More on the APIs below.
+Some of the APIs are also available without any authentication. Since AngularJS runs within a browser, BA should not be used to authenticate to the APIs. This is to avoid storing the BA header values at the browser. Hence, all the APIs used in this sample webapp use only JWT to authenticate to SecureDB Encrypted IdM APIs. The APIs that require BA for authentication are not included in this sample web app. So, the idea is to call "/authenticate" API first, and then use the JWT returned to make further API calls. Based on the authenticated user being a regular or a SecureDB Admin user, different APIs will work. More on the APIs below.
 
 ## Important Files
 
@@ -58,5 +60,10 @@ This file contains calls to all REST apis that can be invoked by SecureDB admin 
 * delete users
 
 etc, can be found in this file. 
+
+# Further Read
+[SecureDB API Reference Guide](https://securedb.co/apidocs)
+[SecureDB API Playground (Swagger)](https://api.securedb.co/)
+[SecureDB Documentation](https://securedb.co/docs)
 
 If you have any questions, please write to us at support at securedb.co
