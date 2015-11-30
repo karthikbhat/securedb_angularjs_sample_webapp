@@ -1,4 +1,4 @@
-# securedb_angurlasjs_webapp
+# securedb_angurlarjs_webapp
 
 This repository shows a very simple webapp which integrates with **SecureDB RESTful Encrypted Identity Management APIs** via angularjs. The intention is to show how simple it is for anyone to come up with a fully integrated webapp providing enterprise class safe,secure, encrypted identity management within a matter of few hours using SecureDB APIs.
 
