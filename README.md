@@ -23,13 +23,13 @@ There are three important files in this repository:
 This file contains all the angularjs code that integrates with various POST/PUT/GET/DELETE APIs that SecureDB provides. It basically defines a scope ($scope) in which all the variables are defined and get their values which are then used by various functions within this same scope to eventually make REST API calls
 This $scope has two important variables which will be needed to be modified to get started.
 
-### $scope.customerId 
+#### $scope.customerId 
 
 This will be set to the **Customer ID** obtained above. E.g:
 
 $scope.customerId = "gJHyAMgv";
 
-### $scope.directoryId
+#### $scope.directoryId
 
 This will be set to the **Directory ID** obtained above. E.g:
 
