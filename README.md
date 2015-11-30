@@ -58,3 +58,5 @@ This file contains calls to all REST apis that can be invoked by admin and super
 * delete users
 
 etc, can be found in this file. 
+
+If you have any questions, please write to us at support at securedb.co
