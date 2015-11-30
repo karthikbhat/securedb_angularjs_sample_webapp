@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="sampleModule">
+<head lang="en">
+	<meta charset="utf-8">
+	<script src="lib/angular.min.js"></script>
+	<script src="js/sampleApp.js"></script>
+	<title>Sample App</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id='header'>
+  <div class="ui-wrap">
+      <center><a id="logo" href="https://securedb.co">SecureDB Admin APIs</a></center>
+  </div>
+</div>
+<div ng-controller="sampleController" class="columns">
+	<div class="api">
+		<div>
+			<h4>Admin Authenticate</h4>
+				<div>
+					<p style="font-size:12px;">Admin User name:
+						<input type="text" ng-model="admin_userName"/>
+					</p>
+					<p style="font-size:12px;">Admin Password:
+						<input type="password" ng-model="admin_password"/>
+					</p>
+				</div>
+				<button ng-click="admin_authenticate()">Admin Login</button>
+		</div>	
+		<hr>
+		<div>
+			<h4>Lock/Unlock User By UserName</h4>
+				<div>
+					<p style="font-size:12px;">User Name:
+						<input type="text" ng-model="lockuserName"/>
+					</p>
+					<p style="font-size:12px;">User Directory:
+						<input type="text" ng-model="lockuserNameDir"/>
+					</p>
+				</div>
+				<button ng-click="admin_lockUserName()">Lock</button>
+				<button ng-click="admin_unlockUserName()">Unlock</button>
+		</div>
+		<hr>
+		<div>
+			<h4>Lock/Unlock User By UUID</h4>
+			<div>
+				<p style="font-size:12px;">User UUID:
+					<input type="text" ng-model="lockuuid"/>
+				</p>
+				<p style="font-size:12px;">User Directory:
+					<input type="text" ng-model="lockuserDir"/>
+				</p>
+			</div>
+			<button ng-click="admin_lockUUID()">Lock</button>
+			<button ng-click="admin_unlockUUID()">Unlock</button>
+		</div>
+		<hr>
+		<div>
+			<h4>Add Role</h4>
+			<div>
+				<p style="font-size:12px;">User UUID:
+					<input type="text" ng-model="add_roleUUID"/>
+				</p>
+
+				<p style="font-size:12px;">Role Name:
+					<input type="text" ng-model="add_roleName"/>
+				</p>
+			</div>
+			<button ng-click="addRole()">Add Role</button></p>
+		</div>
+		<hr>
+		<div>
+			<h4>Get Accounts By Role</h4>
+			<div>
+				<p style="font-size:12px;">Role Name:
+					<input type="text" ng-model="getAccountsByRole_roleName"/>
+				</p>
+			<div>
+			<button ng-click="getAccountsByRole()">Get Accounts By Role</button>
+		</div>
+		<hr>
+		<div>
+			<h4>Get All Users</h4>
+				<button ng-click="getAllUsers()">Get All Users</button></p>
+		</div>
+		<hr>
+		<div>
+			<h4>Search Users</h4>
+				<div>
+					<p style="font-size:12px;">Column Name:
+						<input type="text" ng-model="search_columnName"/>
+					</p>
+					<p style="font-size:12px;">Value:
+						<input type="text" ng-model="search_value"/>
+					</p>
+				</div>
+				<button ng-click="searchByColumnName()">Search Users</button></p>
+		</div>
+		<hr>
+		<div>
+			<h4>Delete Users</h4>
+				</div>
+					<p style="font-size:12px;">User  UUIDs:
+						<input type="text" ng-model="deleteUserId"/>
+					</p>
+				</div>
+				<button ng-click="deleteUsers()">Delete Users</button></p>
+		</div>
+	</div>
+<div class="result"><h5><pre>Response: {{data | json}} </pre></h5></div>
+
+<p>
+</div>
+
+	
+</body>
+</html>

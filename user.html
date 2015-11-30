@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html ng-app="sampleModule">
+<head lang="en">
+	<meta charset="utf-8">
+	<script src="lib/angular.min.js"></script>
+	<script src="js/sampleApp.js"></script>
+	<title>Sample App</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+<div id='header'>
+  <div class="ui-wrap">
+      <center><a id="logo" href="https://securedb.co">SecureDB</a></center>
+  </div>
+</div>
+
+<div ng-controller="sampleController" class="columns">
+	<div class="api">
+		<div>
+			<h4>Quick Register</h4>
+			<p style="font-size:12px;">
+				This API requires BA Credentials. So, should be called from server side code. Use 'API Playground'
+			</p>
+		</div>	
+
+		<div>
+			<h4>Authenticate</h4>
+			<p style="font-size:12px;">User name:
+				<input type="text" ng-model="userName" placeholder="Email is preferred."/>
+			</p>
+			<p style="font-size:12px;">Password:
+				<input type="password" ng-model="password"/>
+			</p>
+			<button ng-click="authenticate()">Login</button>
+			
+		</div>	
+		<hr>
+
+		<div>
+			<h4>TFA (if enabled)</h4>
+			<p style="font-size:12px;">TFA Code (sent to your phone):
+				<input type="text" ng-model="tfa_auth_code"/>
+			</p>
+			<button ng-click="authenticateTFA()">Do TFA Login</button>
+			
+		</div>	
+		<hr>
+
+		<div>
+			<h4>Create Basic Profile for existing user</h4>
+				<p style="font-size:12px;"> First Name:
+					<input type="text" ng-model="create_firstName"/>
+				</p>
+				<p style="font-size:12px;"> Middle Name:
+					<input type="text" ng-model="create_middleName"/>
+				</p>
+				<p style="font-size:12px;">Update Last Name:
+					<input type="text" ng-model="create_lastName"/>
+				</p>
+				<p style="font-size:12px;">Address:
+					<input type="text" ng-model="create_address"/>
+				</p>
+				<p style="font-size:12px;">City:
+					<input type="text" ng-model="create__city"/>
+				</p>
+				<p style="font-size:12px;">State:
+					<input type="text" ng-model="create_state"/>
+				</p>
+				<p style="font-size:12px;">Zip:
+					<input type="text" ng-model="create_zip"/>
+				</p>
+				<p style="font-size:12px;">Date Of Birth:
+					<input type="text" ng-model="create_dob"/>
+				</p>
+				<p style="font-size:12px;">SSN:
+					<input type="text" ng-model="create_ssn"/>
+				</p>
+				<p style="font-size:12px;">Email:
+					<input type="text" ng-model="create_email"/>
+				</p>
+				<p style="font-size:12px;">Phone Number:
+					<input type="text" ng-model="create_phoneNumber"/>
+				</p>
+				<p style="font-size:12px;">TFA Phone Number:
+					<input type="text" ng-model="create_tfaPhoneNumber"/>
+				</p>
+
+			<button ng-click="createBasicProfile()">Create Basic Profile</button>
+
+		</div>
+		<hr>
+
+		<div>
+			<h4>Get User Profile</h4>
+			<button ng-click="getUserByName()">Get User By Username</button>
+			<button ng-click="getBasicProfileByUUID()">Get Basic Profile By UUID</button>
+		</div>
+		<hr>
+		
+		<div>
+			<h4>Change Password</h4>
+			<p style="font-size:12px;">Current Password:
+				<input type="password" ng-model="change_currentpassword"/>
+			</p>
+			<p style="font-size:12px;">New Password:
+				<input type="password" ng-model="change_newpassword"/>
+			</p>
+			<p style="font-size:12px;">Confirm Password:
+				<input type="password" ng-model="change_confirmpassword"/>
+			</p>
+			<button ng-click="changePassword()">Change Password</button>
+		</div>
+		<hr>
+	
+		<div>
+			<h4>Get Account History</h4>
+			<button ng-click="getAccountHistory()">Get History</button>
+		</div>		
+		<hr>
+
+	
+		<div>
+			<h4>Forgot Password</h4>	
+			<div>
+				<p style="font-size:12px;">User Name:
+					<input type="text" ng-model="forgot_password_user_Name"/>
+				</p>
+			</div>
+			<button ng-click="requestPasswordReset()">Forgot Password</button>
+		</div>	
+		<hr>
+		
+		<div>
+			<h4>Reset Password</h4>	
+			<div>
+				<p style="font-size:12px;">Random code:
+					<input type="text" ng-model="reset_pwd_random_code"/>
+				</p>
+				<p style="font-size:12px;">Enter Password:
+					<input type="password" ng-model="reset_pwd_password"/>
+				</p>
+				<button ng-click="resetPassword()">Reset Password</button>
+			</div>
+		</div>
+		<hr>
+	
+		<div>
+			<h4>Enable TFA</h4>	
+			<div>
+				<p style="font-size:12px;">Phone Number:
+					<input type="text" size="50" ng-model="tfa_phonenum" placeholder="<Country Code without '+' prefix><Phone Number>"/>
+				</p>
+				<button ng-click="enableTFAStep1()">Do Step 1</button>
+
+				<p style="font-size:12px;">Enter TFA code received on your phone:
+					<input type="text" size="50" ng-model="tfa_code"/>
+				</p>
+				<button ng-click="enableTFAStep2()">Do Step 2</button>
+
+			</div>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Disable TFA</h4>	
+			<div>
+				<p style="font-size:12px;">Phone Number:
+					<input type="text" size="50" ng-model="tfa_phonenum" placeholder="<Country Code without '+' prefix><Phone Number>"/>
+				</p>
+				<button ng-click="disableTFAStep1()">Do Step 1</button>
+
+				<p style="font-size:12px;">Enter TFA code received on your phone:
+					<input type="text" size="50" ng-model="tfa_code"/>
+				</p>
+				<button ng-click="disableTFAStep2()">Do Step 2</button>
+			</div>
+		</div>
+		<hr>
+	
+		<div>
+			<h4>Update Basic Profile</h4>	
+			<div>
+				<p style="font-size:12px;">Update First Name:
+					<input type="text" ng-model="update_firstName"/>
+				</p>
+				<p style="font-size:12px;">Update Middle Name:
+					<input type="text" ng-model="update_middleName"/>
+				</p>
+				<p style="font-size:12px;">Update Last Name:
+					<input type="text" ng-model="update_lastName"/>
+				</p>
+				<p style="font-size:12px;">Address:
+					<input type="text" ng-model="update_address"/>
+				</p>
+				<p style="font-size:12px;">City:
+					<input type="text" ng-model="update__city"/>
+				</p>
+				<p style="font-size:12px;">State:
+					<input type="text" ng-model="update_state"/>
+				</p>
+				<p style="font-size:12px;">Zip:
+					<input type="text" ng-model="update_zip"/>
+				</p>
+				<p style="font-size:12px;">Date Of Birth:
+					<input type="text" ng-model="update_dob"/>
+				</p>
+				<p style="font-size:12px;">SSN:
+					<input type="text" ng-model="update_ssn"/>
+				</p>
+				<p style="font-size:12px;">Email:
+					<input type="text" ng-model="update_email"/>
+				</p>
+				<p style="font-size:12px;">Phone Number:
+					<input type="text" ng-model="update_phoneNumber"/>
+				</p>
+				<p style="font-size:12px;">TFA Phone Number:
+					<input type="text" ng-model="update_tfaPhoneNumber"/>
+				</p>
+
+			</div>
+			<button ng-click="updateBasicProfile()">Update Basic Profile</button>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Create Account Card</h4>	
+			<div>
+				<p style="font-size:12px;">Card Name:
+					<input type="text" ng-model="create_card_Name"/>
+				</p>
+				<p style="font-size:12px;">Card Number:
+					<input type="text" ng-model="create_card_number"/>
+				</p>
+				<p style="font-size:12px;">Card Number Last 4 Digits:
+					<input type="text" ng-model="create_card_number_last_4"/>
+				</p>
+
+				<p style="font-size:12px;">Card Expiry:
+					<input type="text" ng-model="create_card_expiry"/>
+				</p>
+				<p style="font-size:12px;">Card Pin:
+					<input type="text" ng-model="create_card_pin"/>
+				</p>
+			</div>
+			<button ng-click="createAccountCard()">Create Account Card</button>
+		</div>
+		<hr>
+		<div>
+			<h4>Create Account Dependent</h4>	
+			<div>
+				<p style="font-size:12px;">First Name:
+					<input type="text" ng-model="create_dependent_first_Name"/>
+				</p>
+				<p style="font-size:12px;">Last Name:
+					<input type="text" ng-model="create_dependent_last_Name"/>
+				</p>
+				<p style="font-size:12px;">Relationship:
+				<input type="text" ng-model="create_dependent_relationship"/>
+				</p>
+			</div>
+			<button ng-click="createAccountDependent()">Create Account Dependent</button>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Update Account Dependent</h4>	
+			<div>
+				<p style="font-size:12px;">First Name:
+					<input type="text" ng-model="update_dependent_first_Name"/>
+				</p>
+				<p style="font-size:12px;">Last Name:
+					<input type="text" ng-model="update_dependent_last_Name"/>
+				</p>
+				<p style="font-size:12px;">Relationship:
+				<input type="text" ng-model="update_dependent_relationship"/>
+				</p>
+			</div>
+			<button ng-click="updateAccountDependent()">Update Account Dependent</button>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Update Account Card</h4>	
+			<div>
+				<p style="font-size:12px;">Card Name:
+					<input type="text" ng-model="update_card_Name"/>
+				</p>
+				<p style="font-size:12px;">Card Number:
+					<input type="text" ng-model="update_card_number"/>
+				</p>
+				<p style="font-size:12px;">Card Number Last 4 Digits:
+					<input type="text" ng-model="update_card_number_last_4"/>
+				</p>
+
+				<p style="font-size:12px;">Card Expiry:
+					<input type="text" ng-model="update_card_expiry"/>
+
+				</p>
+				<p style="font-size:12px;">Card Pin:
+					<input type="text" ng-model="update_card_pin"/>
+				</p>
+			</div>
+			<button ng-click="updateAccountCard()">Update Account Card</button>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Get Account Role/Roles</h4>	
+			<div>
+				<button ng-click="getAccountRoleByUUID()">Get Account Role By UUID</button>
+				<button ng-click="getAccountRolesByUUID()">Get Account Roles By UUID</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="result"><h5><pre>Response: {{data | json}} </pre></h5></div>
+
+	</div>
+   </body>
+</html>

@@ -1,0 +1,22 @@
+#header {
+  background-color: #89bf04;
+  padding: 14px;
+}
+.ui-wrap {
+  line-height: 1;
+  font-family: "Droid Sans", sans-serif;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header a#logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  background: transparent url(logo_small.png) no-repeat left center;
+  padding: 20px 0 20px 40px;
+  color: white;
+}
+div.columns       { width: 1200px; }
+div.api          { width: 600px; background-color: #cccccc; ; float: left}
+div.result           { width: 600px; background-color: #e14e32; ; float: right}
