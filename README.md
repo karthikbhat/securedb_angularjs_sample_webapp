@@ -62,8 +62,8 @@ This file contains calls to all REST apis that can be invoked by SecureDB admin 
 etc, can be found in this file. 
 
 # Further Read
-[SecureDB API Reference Guide](https://securedb.co/apidocs)
-[SecureDB API Playground (Swagger)](https://api.securedb.co/)
-[SecureDB Documentation](https://securedb.co/docs)
+* [SecureDB API Reference Guide](https://securedb.co/apidocs)
+* [SecureDB API Playground (Swagger)](https://api.securedb.co/)
+* [SecureDB Documentation](https://securedb.co/docs)
 
 If you have any questions, please write to us at support at securedb.co
