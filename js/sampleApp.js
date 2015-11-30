@@ -8,10 +8,10 @@
 		$scope.httpProvider = $http;
 		$scope.logProvider = $log;
 		// Replace with your customerId	
-		$scope.customerId = "gJHyamAv";
+		$scope.customerId = "$REPLACE_ME";
 
 		// Replace with your directoryId	
-		$scope.directoryId = "angular1";
+		$scope.directoryId = "$REPLACE_ME";
 		
 		$scope.userName = null;
 		$scope.admin_password =null;
