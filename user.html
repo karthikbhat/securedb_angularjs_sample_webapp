@@ -32,6 +32,7 @@
 				<input type="password" ng-model="password"/>
 			</p>
 			<button ng-click="authenticate()">Login</button>
+			<button ng-click="logout()">Log Out</button>
 			
 		</div>	
 		<hr>
@@ -92,7 +93,7 @@
 
 		<div>
 			<h4>Get User Profile</h4>
-			<button ng-click="getUserByName()">Get User By Username</button>
+			<button ng-click="getUserByName()">Get Account By Username</button>
 			<button ng-click="getBasicProfileByUUID()">Get Basic Profile By UUID</button>
 		</div>
 		<hr>
@@ -225,9 +226,6 @@
 		<div>
 			<h4>Create Account Card</h4>	
 			<div>
-				<p style="font-size:12px;">Card Name:
-					<input type="text" ng-model="create_card_Name"/>
-				</p>
 				<p style="font-size:12px;">Card Number:
 					<input type="text" ng-model="create_card_number"/>
 				</p>
@@ -238,6 +236,10 @@
 				<p style="font-size:12px;">Card Expiry:
 					<input type="text" ng-model="create_card_expiry"/>
 				</p>
+				<p style="font-size:12px;">Card Name:
+					<input type="text" ng-model="create_card_name"/>
+				</p>
+
 				<p style="font-size:12px;">Card Pin:
 					<input type="text" ng-model="create_card_pin"/>
 				</p>
@@ -282,9 +284,6 @@
 		<div>
 			<h4>Update Account Card</h4>	
 			<div>
-				<p style="font-size:12px;">Card Name:
-					<input type="text" ng-model="update_card_Name"/>
-				</p>
 				<p style="font-size:12px;">Card Number:
 					<input type="text" ng-model="update_card_number"/>
 				</p>
@@ -296,6 +295,10 @@
 					<input type="text" ng-model="update_card_expiry"/>
 
 				</p>
+				<p style="font-size:12px;">Card Name:
+					<input type="text" ng-model="update_card_Name"/>
+				</p>
+
 				<p style="font-size:12px;">Card Pin:
 					<input type="text" ng-model="update_card_pin"/>
 				</p>

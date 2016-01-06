@@ -26,6 +26,7 @@
 					</p>
 				</div>
 				<button ng-click="admin_authenticate()">Admin Login</button>
+				<button ng-click="logout()">Admin Log Out</button>
 		</div>	
 		<hr>
 		<div>
@@ -57,19 +58,66 @@
 		</div>
 		<hr>
 		<div>
-			<h4>Add Role</h4>
+			<h4>Add/Delete Role</h4>
 			<div>
-				<p style="font-size:12px;">User UUID:
-					<input type="text" ng-model="add_roleUUID"/>
-				</p>
 
 				<p style="font-size:12px;">Role Name:
 					<input type="text" ng-model="add_roleName"/>
 				</p>
 			</div>
-			<button ng-click="addRole()">Add Role</button></p>
+			<button ng-click="addRole()">Add Role</button>
+			<button ng-click="deleteRole()">Delete Role</button>
+		</p>
 		</div>
 		<hr>
+
+		<div>
+			<h4>Add Role To Account</h4>
+			<div>
+				<p style="font-size:12px;">User UUID:
+					<input type="text" ng-model="add_roleToAccountUUID"/>
+				</p>
+
+				<p style="font-size:12px;">Role Name:
+					<input type="text" ng-model="add_roleToAccount"/>
+				</p>
+			</div>
+			<button ng-click="addRoleToAccount()">Add Role To Account</button>
+		</p>
+		</div>
+		<hr>
+		<div>
+			<h4>Delete Role From Account</h4>
+			<div>
+				<p style="font-size:12px;">User UUID:
+					<input type="text" ng-model="delete_roleUUID"/>
+				</p>
+
+				<p style="font-size:12px;">Role Name:
+					<input type="text" ng-model="delete_roleFromAccount"/>
+				</p>
+			</div>
+			<button ng-click="deleteRoleFromAccount()">Delete Role From Account</button>
+		</p>
+		</div>
+		<hr>
+
+		<div>
+			<h4>Add Role To Multiple Accounts</h4>
+			<div>
+				<p style="font-size:12px;">User UUID:
+					<input type="text" ng-model="add_roleToMultilpleUUID"/>
+				</p>
+
+				<p style="font-size:12px;">Role Name:
+					<input type="text" ng-model="add_ToMultipleAccounts"/>
+				</p>
+			</div>
+			<button ng-click="addRoleToMultipleAccounts()">Add Role To Multiple Accounts</button>
+		</p>
+		</div>
+		<hr>
+
 		<div>
 			<h4>Get Accounts By Role</h4>
 			<div>
@@ -81,10 +129,26 @@
 		</div>
 		<hr>
 		<div>
+			<h4>Get Account By UUID</h4>
+				<p style="font-size:12px;">User  UUID:
+					<input type="text" ng-model="get_account_ByUuid"/>
+				</p>
+				<button ng-click="getAccountByUUID()">Get Account By UUID</button>
+		</div>
+
+		<hr>
+		<div>
 			<h4>Get All Users</h4>
 				<button ng-click="getAllUsers()">Get All Users</button></p>
 		</div>
 		<hr>
+
+		<div>
+			<h4>Get All Users</h4>
+				<button ng-click="getAllRoles()">Get All Roles</button></p>
+		</div>
+		<hr>
+
 		<div>
 			<h4>Search Users</h4>
 				<div>
